@@ -1,6 +1,7 @@
 package com.simbirsoft;
 
 public enum Catalog {
+
     ELECTRONIC("Электроника"),
     COMPUTERS("Компьютеры и периферия"),
     APPLIANCES("Бытовая техника"),
