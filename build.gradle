@@ -1,9 +1,18 @@
 plugins {
     id 'java-library'
+    id "io.qameta.allure" version "2.10.0"
 }
 
 repositories {
     mavenCentral()
+}
+allure {
+    version = "2.18.1"
+    autoconfigure = true
+
+    useJUnit5 {
+        version = "2.18.1"
+    }
 }
 
 def selenideVersion = "5.24.3",
@@ -13,7 +22,9 @@ dependencies {
     testImplementation(
             "com.codeborne:selenide:$selenideVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
-            "com.google.guava:guava:31.1-jre")
+            "com.google.guava:guava:31.1-jre",
+            "io.qameta.allure:allure-selenide:2.18.1",
+            "org.aeonbits.owner:owner:1.0.12")
     testRuntimeOnly(
             "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
     )
